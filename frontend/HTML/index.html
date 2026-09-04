@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Research & Document Intelligence Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/CSS/styles.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- Shelf: document library -->
+  <aside class="shelf" aria-label="Document library">
+    <div class="shelf-header">
+      <span class="mark" aria-hidden="true">&#9679;</span>
+      <h1>AI Research & Document Intelligence Assistant</h1>
+    </div>
+
+    <label class="dropzone" id="dropzone" for="file-input" tabindex="0">
+      <input type="file" id="file-input" accept="application/pdf" multiple hidden />
+      <svg class="dropzone-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="dropzone-title">Add a PDF</span>
+      <span class="dropzone-sub">Drop a file here, or click to browse</span>
+    </label>
+
+    <div class="shelf-list-header">
+      <span>Your documents</span>
+    </div>
+
+    <ul class="doc-list" id="doc-list" aria-live="polite">
+      <!-- documents render here -->
+    </ul>
+
+    <div class="shelf-empty" id="shelf-empty">
+      <p>Nothing on the shelf yet. Add a PDF to start asking questions about it.</p>
+    </div>
+
+    <div class="shelf-footer">
+      <button class="text-button" id="clear-chat">Clear conversation</button>
+    </div>
+  </aside>
+
+  <!-- Desk: conversation -->
+  <main class="desk" aria-label="Conversation">
+    <header class="desk-header">
+      <div>
+        <h2 id="desk-title">Ask about your documents</h2>
+        <p class="desk-sub" id="desk-sub">Upload a PDF on the left, then ask a question here.</p>
+      </div>
+      <span class="status-pill" id="status-pill">0 ready</span>
+    </header>
+
+    <div class="messages" id="messages" role="log" aria-live="polite">
+      <div class="empty-desk" id="empty-desk">
+        <p>Your conversation will appear here once you've added a document and asked a question.</p>
+      </div>
+    </div>
+
+    <form class="composer" id="composer">
+      <input
+        type="text"
+        id="composer-input"
+        placeholder="Ask a question about your documents"
+        autocomplete="off"
+        disabled
+      />
+      <button type="submit" id="composer-send" aria-label="Send question" disabled>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </form>
+  </main>
+
+</div>
+
+<script src="/JS/script.js"></script>
+</body>
+</html>
