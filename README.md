@@ -4,6 +4,10 @@ An intelligent document question-answering assistant that allows users to upload
 
 The system combines **LangChain, LangGraph, Google Gemini, ChromaDB, Hugging Face embeddings, and FastAPI** to process documents, retrieve relevant information, and generate grounded answers with document and page references.
 
+## Website Preview
+
+![AI Research & Document Intelligence Assistant](assets/website-preview.png)
+
 ---
 
 ## 🚀 Features
